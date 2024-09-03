@@ -27,7 +27,7 @@ Welcome to **TaskPrompter**, the next-level task management system where product
 ## 🌐 **Live Demo**
 
 - **Frontend Only**: [TaskPrompter Frontend](https://taskprompter-fe.vercel.app/)
-- **Full Application**: [TaskPrompter Complete](https://taskprompter.onrender.com/) *(Note: The full application may take some time to load due to server startup time.)*
+- **Full Application**: [TaskPrompter Complete App](https://taskprompter.onrender.com/) *(Note: The full application may take some time to load due to server startup time.)*
 
 ## 📚 **Getting Started**
 
@@ -76,9 +76,7 @@ Ensure you have the following installed:
 
 ## 📬 **Contact**
 
-Kalyan - [2100030959cseh@gmail.com](mailto:2100030959cseh@gmail.com)  
-
-Project Link: [https://github.com/yourusername/taskprompter](https://github.com/yourusername/taskprompter)
+Kalyan - [2100030959cseh@gmail.com](mailto:2100030959cseh@gmail.com
 
 ---
 
