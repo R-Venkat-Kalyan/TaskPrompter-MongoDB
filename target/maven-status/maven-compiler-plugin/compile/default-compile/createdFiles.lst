@@ -1,0 +1,12 @@
+com\example\TaskPrompterMongoDB\entity\ToDoEntity.class
+com\example\TaskPrompterMongoDB\controller\ToDoController.class
+com\example\TaskPrompterMongoDB\entity\ContactEntity.class
+com\example\TaskPrompterMongoDB\service\MyTaskScheduler.class
+com\example\TaskPrompterMongoDB\repository\ContactRepository.class
+com\example\TaskPrompterMongoDB\entity\UserEntity.class
+com\example\TaskPrompterMongoDB\service\ToDoService.class
+com\example\TaskPrompterMongoDB\service\UserService.class
+com\example\TaskPrompterMongoDB\TaskPrompterMongoDbApplication.class
+com\example\TaskPrompterMongoDB\repository\ToDoRepository.class
+com\example\TaskPrompterMongoDB\repository\UserRepository.class
+com\example\TaskPrompterMongoDB\service\ContactService.class

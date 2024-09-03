@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In</title>
+    <!-- Correct inclusion of Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+    <!-- Favicons -->
+    <link href="timeline.png" rel="icon">
+	<style>
+        /* Importing fonts from Google */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+        body {
+            background-image: linear-gradient(to right, #00b09b, #96c93d);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .wrapper {
+            max-width: 350px;
+            width: 100%;
+            min-height: 500px;
+            padding: 40px 30px 30px 30px;
+            background-color: #ecf0f3;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            width: 80px;
+            margin: 0 auto 20px auto;
+        }
+
+        .logo img {
+            width: 100%;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 50%;
+            box-shadow: 0px 0px 3px #5f5f5f, 0px 0px 0px 5px #ecf0f3, 8px 8px 15px #a7aaa7, -8px -8px 15px #fff;
+        }
+
+        .wrapper .name {
+            font-weight: 600;
+            font-size: 1.4rem;
+            letter-spacing: 1.3px;
+            text-align: center;
+            color: #555;
+        }
+
+        .wrapper .form-field {
+            position: relative;
+            margin-bottom: 20px;
+            border-radius: 20px;
+            box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #fff;
+        }
+
+        .wrapper .form-field input {
+            width: 100%;
+            padding: 10px 15px 10px 35px;
+            border: none;
+            outline: none;
+            background: none;
+            font-size: 1rem;
+            color: #666;
+        }
+
+        .wrapper .form-field .fas,
+        .wrapper .form-field .far {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #555;
+        }
+
+        .wrapper .btn,
+        .wrapper .google-btn {
+            width: 100%;
+            height: 45px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .wrapper .btn {
+            background-color: #03A9F4;
+            color: #fff;
+            box-shadow: 3px 3px 3px #b1b1b1, -3px -3px 3px #fff;
+        }
+
+        .wrapper .btn:hover {
+            background-color: #039BE5;
+        }
+
+        .wrapper .google-btn {
+            width: 90%; /* Slightly reduced width to differentiate */
+            margin: 0 auto 15px; /* Center the button horizontally */
+            background-color: #4285f4;
+            color: #fff;
+            box-shadow: 3px 3px 3px #b1b1b1, -3px -3px 3px #fff;
+            transition: background-color .218s, box-shadow .218s;
+            text-decoration: none;
+        }
+
+        .wrapper .google-btn:hover {
+            background-color: #3367D6;
+            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .35);
+            color: #fff;
+        }
+
+        .google-btn .logo-wrapper {
+            background: #fff;
+            border-radius: 50%;
+            width: 28px;
+            height: 28px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 10px;
+        }
+
+        .google-btn img {
+            width: 18px;
+            height: 18px;
+        }
+
+        .wrapper a {
+            text-decoration: none;
+            font-size: 0.8rem;
+            color: #03A9F4;
+        }
+
+        .wrapper a:hover {
+            color: #039BE5;
+        }
+
+        @media (max-width: 768px) {
+            .wrapper {
+                padding: 20px;
+                margin: 20px;
+            }
+
+            .wrapper .btn,
+            .wrapper .google-btn {
+                height: 45px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+
+	<th:block th:if="${successMessage}">
+		<script th:inline="javascript">
+			/*<![CDATA[*/
+			window.onload = function () {
+				alert(/*[[${successMessage}]]*/ '');
+			};
+        /*]]>*/
+		</script>
+	</th:block>
+
+</head>
+
+<body>
+	 <div class="wrapper">
+        <div class="logo">
+            <img src="user.png" alt="">
+        </div>
+        <div class="text-center mt-4 name">
+            Login
+        </div>
+		<form action="/userLogin" method="get" class="p-3 mt-3">	
+            <div class="form-field d-flex align-items-center">
+                <span class="far fa-user"></span>
+                <input type="email" name="username" id="userMail" placeholder="Email" required>
+            </div>
+            <div class="form-field d-flex align-items-center">
+                <span class="fas fa-key"></span>
+                <input type="password" name="password" id="pwd" placeholder="Password" required>
+            </div>
+            <button type="submit" class="btn mt-3">Login</button>
+        </form>
+        <!-- Sign in with Google Button -->
+        <a href="/oauth2/authorization/google" class="google-btn">
+            <div class="logo-wrapper">
+                <img src="https://developers.google.com/identity/images/g-logo.png" alt="Google Logo">
+            </div>
+            <span>Sign in with Google</span>
+        </a>
+        <div class="text-center fs-6 mt-4">
+            <b><a href="#">Forget password?</a></b> or <b><a href="/register">Register</a></b>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

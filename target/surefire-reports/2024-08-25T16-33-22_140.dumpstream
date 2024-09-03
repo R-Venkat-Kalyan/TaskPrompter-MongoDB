@@ -1,0 +1,5 @@
+# Created at 2024-08-25T16:33:22.556
+Boot Manifest-JAR contains absolute paths in classpath 'D:\Downloads\JFSD\TaskPrompter-MongoDB\target\test-classes'
+Hint: <argLine>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</argLine>
+'other' has different root
+
