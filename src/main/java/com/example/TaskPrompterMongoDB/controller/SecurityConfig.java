@@ -34,7 +34,7 @@ public class SecurityConfig {
 	        )
 	        .logout(logout -> logout
 	            .logoutUrl("/logout")  // URL to trigger the logout process
-	            .logoutSuccessUrl("/signin")  // Redirect to login page after successful logout
+	            .logoutSuccessUrl("/")  // Redirect to login page after successful logout
 	            .invalidateHttpSession(true)  // Invalidate the HTTP session to clear user data
 	            .deleteCookies("JSESSIONID")  // Remove the JSESSIONID cookie
 	        );

@@ -149,7 +149,6 @@ public class ToDoController {
 	        HttpSession session) {
 	    List<UserEntity> allUsers = us.getAllUsers();
 	    boolean userFound = false;
-        System.out.println("Came here");
 	    for (UserEntity ue : allUsers) {
 	        String pwd = request.getParameter("password");
 	        String email = request.getParameter("username");
@@ -162,21 +161,17 @@ public class ToDoController {
 	            session.setAttribute("userName", ue.getUserName());
 	            session.setMaxInactiveInterval(30 * 60);
 	            userFound = true;
-	            System.out.println("Came here1");
 	            return "redirect:/user";
 	        } else if (ue.getUserMail().equals(email) && !ue.getPassword().equals(pwd)) {
-	        	System.out.println("Came here2");
 	            redirectAttributes.addFlashAttribute("successMessage", "Invalid Password..❌❌");
 	            return "redirect:/signin";
 	        }
 	    }
 
 	    if (!userFound) {
-	    	System.out.println("Came here3");
 	        redirectAttributes.addFlashAttribute("successMessage", "User Not Found..❌\nPlease Register First");
 	        return "redirect:/register";
 	    }
-	    System.out.println("Came here4");
 	    redirectAttributes.addFlashAttribute("successMessage", "Invalid Credentials..❌❌");
 	    return "redirect:/signin";
 	}
@@ -242,7 +237,6 @@ public class ToDoController {
 	        model.addAttribute("userName", userName);  // Add user name to model
 	        return "DashBoard";
 	    }
-        System.out.println("returned");
 	    return "redirect:/signin";
 	}
 
